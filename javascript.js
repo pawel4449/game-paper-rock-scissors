@@ -28,9 +28,28 @@ game to infinity ? or to some limit = 10 times ?
  
 
 
-function GetComputerChoice(max) {
-    return Math.floor(Math.random()*3);
-  }
-           
-   console.log(GetComputerChoice(3));                       
-                        
+function GetComputerChoice(max) {                        
+  let pCchoice= Math.floor(Math.random()*3)    ;
+
+if (pCchoice===0) {
+    return "rock";
+} else if (pCchoice===1) {
+    return "paper";
+} else {
+    return "scissors";
+}                               
+     }                                          
+         
+        
+
+
+
+
+
+
+console.log(GetComputerChoice(2)); 
+                 
+                                          
+                          
+     
+                                                            
