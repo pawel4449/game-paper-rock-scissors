@@ -31,7 +31,10 @@ game to infinity ? or to some limit = 10 times ?
 
 // function human choice, you can write 1,2,3 or rock, paper, scissors.
 
-
+let humanScore = 0;
+let computerScore = 0;
+console.log(humanScore, computerScore);
+       
 
 
 
