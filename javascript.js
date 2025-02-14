@@ -31,55 +31,63 @@ game to infinity ? or to some limit = 10 times ?
 
 // function human choice, you can write 1,2,3 or rock, paper, scissors.
 
+
+
+
 let humanScore = 0;
 let computerScore = 0;
-console.log(humanScore, computerScore);
-       
+        
 
 
 
 function GetHumanChoice()   {
-    let hChoice= prompt
+    let humanChoice= prompt
     ('What do you choose ? Write  "rock",  or "paper" ,   or "scissors"');           
     
-    if (hChoice.toLocaleLowerCase()===  "rock"  ) {  
-        return "Rock";}
-              else if (hChoice.toLocaleLowerCase()=== "paper"   ) {
-        return "Paper";}
+    if (humanChoice.toLocaleLowerCase()===  "rock"  ) {  
+        return "rock";}
+              else if (humanChoice.toLocaleLowerCase()=== "paper"   ) {
+        return "paper";}
      else {
-        return "Scissors"};
+        return "scissors"};
 }
 
       
     
 
 
-function GetComputerChoice(max) {                        
-    let pCchoice= Math.floor(Math.random()*3)+1    ;
+function GetComputerChoice( ) {                        
+    let computerChoice= Math.floor(Math.random()*3)+1    ;
     
-if (pCchoice===1) {
+if (computerChoice===1) {
     return "rock";
-} else if (pCchoice===2) {
+} else if (computerChoice===2) {
     return "paper";
 } else {
     return "scissors";
 }                               
      }     
-               
-
-
-
- 
- 
-console.log(GetHumanChoice());
-   
-  
-
+           
      
-
-console.log(GetComputerChoice(2)); 
-                 
-                                          
-                          
      
-                                                            
+     function playRound(humanChoice,computerChoice) {
+         const humanSelection =GetHumanChoice();
+         const computerSelection=GetComputerChoice();
+         
+      
+         if ( humanSelection === computerSelection) {
+    return `It's a tie. You and Computer choose ${humanSelection}`
+} else if (( humanSelection === "paper" && computerSelection ==="rock")
+    || (humanSelection ==="scissors" && computerSelection ==="paper")
+    || (humanSelection==="rock" && computerSelection ==="paper")) {
+        humanScore++
+        return `You win ${humanScore} beats ${computerScore}`    
+    }
+    else {
+        computerScore++
+        return `${computerSelection} beats ${humanSelection} Computer wins!`; 
+    } }
+    ;
+    
+     console.log(playRound());
+     
