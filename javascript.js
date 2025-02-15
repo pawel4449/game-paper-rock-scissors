@@ -70,24 +70,44 @@ if (computerChoice===1) {
            
      
      
-     function playRound(humanChoice,computerChoice) {
-         const humanSelection =GetHumanChoice();
-         const computerSelection=GetComputerChoice();
-         
-      
-         if ( humanSelection === computerSelection) {
-    return `It's a tie. You and Computer choose ${humanSelection}`
-} else if (( humanSelection === "paper" && computerSelection ==="rock")
-    || (humanSelection ==="scissors" && computerSelection ==="paper")
-    || (humanSelection==="rock" && computerSelection ==="paper")) {
-        humanScore++
-        return `You win ${humanScore} beats ${computerScore}`    
-    }
-    else {
-        computerScore++
-        return `${computerSelection} beats ${humanSelection} Computer wins!`; 
-    } }
+     
     ;
     
-     console.log(playRound());
+        function playRound(humanChoice,computerChoice) {
+            const humanSelection =GetHumanChoice();
+            const computerSelection=GetComputerChoice();
+            
+         
+            if ( humanSelection === computerSelection) {
+       return `It's a tie. You and Computer choose ${humanSelection}`
+   } else if (( humanSelection === "paper" && computerSelection ==="rock")
+       || (humanSelection ==="scissors" && computerSelection ==="paper")
+       || (humanSelection==="rock" && computerSelection ==="paper")) {
+           humanScore++
+           return `You win ${humanSelection} beats ${computerSelection}`    
+       }
+       else {
+           computerScore++
+           return `${computerSelection} beats ${humanSelection} Computer wins!`; 
+       } }
+   
+
+       function playGame () {
+       console.log(playRound());
+       console.log(playRound());
+       console.log(playRound());
+       console.log(playRound());
+       console.log(playRound());
+
+       if (computerScore>humanScore) {
+        console.log('Last result = Computer Win');
+        
+       } else { 
+        console.log('Last result = You win! Congratulation!');
+        
+       }
+    ;}
+  
+    playGame();
+
      
